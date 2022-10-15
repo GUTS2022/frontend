@@ -40,7 +40,7 @@ const TablePage = () => {
 
         <div className='w-full h-screen overflow-hidden bg-black'>
             <div className='w-full h-[200px]'>
-                <h1 className='text-white'>Navbar</h1>
+                <h1 className='text-red-800'>Navbar</h1>
                 <button>People</button>
                 <button>People</button>
             </div>
