@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'special-red': '#2C0800',
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       }, animation: {

@@ -4,7 +4,7 @@ import styles from '../style'
 
 const Home = () => {
     return (
-        <div className='bg-black w-full h-screen overflow-hidden cursor-crosshair'>
+        <div className='bg-gradient-to-b from from-black via-black to-special-red w-full h-screen overflow-hidden cursor-crosshair '>
             <div className='flex items-center justify-center h-full flex-col'>
                 <h1 className="mb-2 font-mono text-4xl text-white md:text-6xl ">
                     University of Glasgow  <br className='hidden' />
