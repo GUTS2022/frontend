@@ -11,7 +11,7 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/table' element={<TablePage />} />
       <Route path='/heatmap' element={<Heatmap />} />
-      <Route path='/table' element={<StudentNetwork />} />
+      <Route path='/network' element={<StudentNetwork />} />
     </Routes>
   );
 }
