@@ -36,23 +36,34 @@ const StudentNetwork = () => {
   }
 
   const onNodeClick = useCallback((node: any) => {
-    const distance = 100;
+    let distance = 100;
     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
 
     graphRef.current?.cameraPosition(
       { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
       node, // lookAt ({ x, y, z })
-      3000  // ms transition duration
+      1500  // ms transition duration
     );
 
     let newData = data;
-    const linkedNodeIds = data?.links.filter((link: any) => {
-      return link.source.id === node.id;
-    }).map((link: any) => link.target.id);
-    newData?.nodes.forEach(checkingNode => {
-      if (!linkedNodeIds?.includes(checkingNode.id)) checkingNode.opacity = 0.0;
-      node.opacity = 1.0;
-    });
+    if (node.opacity === 1) {
+        const linkedNodeIds = data?.links.filter((link: any) => {
+        return link.source.id === node.id;
+        }).map((link: any) => link.target.id);
+        newData?.nodes.forEach(checkingNode => {
+            if (!linkedNodeIds?.includes(checkingNode.id)) {
+                checkingNode.opacity = 0.0;
+            }
+            if (linkedNodeIds?.includes(checkingNode.id)) {
+                checkingNode.opacity = 0.99;
+            }
+        });
+        node.opacity = 0.99;
+    } else {
+        newData?.nodes.forEach(node => {
+            node.opacity = 1.0;
+        })
+    }
     setData(oldData => ({...oldData, ...newData!}));
   }, [graphRef, data]);
 
