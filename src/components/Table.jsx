@@ -38,12 +38,15 @@ const TablePage = () => {
 
     return (
 
-        <div className='w-full h-screen overflow-hidden bg-black'>
-            <div className='w-full h-[200px]'>
-                <h1 className='text-white'>Navbar</h1>
-                <button>People</button>
-                <button>People</button>
-            </div>
+        <div className='w-full h-screen bg-special-red'>
+            <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-black shadow sm:items-baseline w-full">
+                <div class="mb-2 sm:mb-0">
+                    <a href="/home" class="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Students</a>
+                    <a href="/home" class="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Locations</a>
+                    <a href="/home" class="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Statements</a>
+                    <a href="/home" class="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Student Logs</a>
+                </div>
+            </nav>
             <div className=''>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
