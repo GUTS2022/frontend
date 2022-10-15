@@ -1,9 +1,10 @@
 import React from 'react'
+import MapContainer from './MapContainer'
 
 const Heatmap = () => {
   return (
     <div>
-      <h1>Heatmap</h1>
+      <MapContainer  />
     </div>
   )
 }
