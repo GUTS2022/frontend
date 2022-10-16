@@ -58,7 +58,7 @@ const TablePage = (props) => {
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
                                 <TableRow className="bg-[#121212]">
-                                <TableCell align="left"><p className="font-poppins font-semibold text-white">Student ID&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Student ID&nbsp;</p></TableCell>
                                     <TableCell align="left"><p className="font-poppins font-semibold text-white">Age&nbsp;</p></TableCell>
                                     <TableCell align="left"><p className="font-poppins font-semibold text-white">Hair Colour&nbsp;</p></TableCell>
                                     <TableCell align="left"><p className="font-poppins font-semibold text-white">Height&nbsp;</p></TableCell>
@@ -135,12 +135,12 @@ const TablePage = (props) => {
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow>
-                                    <TableCell>Description</TableCell>
-                                    <TableCell align="right">(Longitude,Latitude)&nbsp;</TableCell>
-                                    <TableCell align="right">Name</TableCell>
-                                    <TableCell align="right">Opening Time&nbsp;</TableCell>
-                                    <TableCell align="right">Ending Time&nbsp;</TableCell>
+                                <TableRow className="bg-[#121212]">
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Description&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">(Longitude, Latitude)&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Name&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Opening Time&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Ending Time&nbsp;</p></TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -148,13 +148,33 @@ const TablePage = (props) => {
                                     <TableRow
                                         key={index}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        className={index % 2 === 0 ? 'bg-[#2b2c34]' : 'bg-[#33333d]'}
                                     >
-                                        <TableCell align="left">{location['description']}</TableCell>
-                                        <TableCell align="right">{`(${location['location']['latitude']},(${location['location']['longitude']})`}</TableCell>
-                                        <TableCell align="right">{location['name']}</TableCell>
-                                        <TableCell align="right">{location['opening_hours']['start_time']}</TableCell>
-                                        <TableCell align="right">{location['opening_hours']['end_time']}</TableCell>
-
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {location['description']}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {`(${location['location']['latitude']},(${location['location']['longitude']})`}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {location['name']}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {location['opening_hours']['start_time']}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {location['opening_hours']['end_time']}
+                                            </p>
+                                        </TableCell>
                                     </TableRow>
                                 )) : null}
                             </TableBody>
@@ -167,11 +187,11 @@ const TablePage = (props) => {
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow>
-                                    <TableCell>Name</TableCell>
-                                    <TableCell align="right">Location</TableCell>
-                                    <TableCell align="right">(From,To)&nbsp;</TableCell>
-                                    <TableCell align="right">Student Id</TableCell>
+                                <TableRow className="bg-[#121212]">
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Name&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Location&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">(From, To)&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Student ID&nbsp;</p></TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -179,12 +199,28 @@ const TablePage = (props) => {
                                     <TableRow
                                         key={index}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        className={index % 2 === 0 ? 'bg-[#2b2c34]' : 'bg-[#33333d]'}
                                     >
-                                        <TableCell align="left">{location['name']}</TableCell>
-                                        <TableCell align="right">{`${location['place_name']}`}</TableCell>
-                                        <TableCell align="right">{`${location['present_hours']['start_time']} - ${location['present_hours']['end_time']}`}</TableCell>
-                                        <TableCell align="right">{`${location['student_id']}`}</TableCell>
-
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {location['name']}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {`${location['place_name']}`}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {`${location['present_hours']['start_time']} - ${location['present_hours']['end_time']}`}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                    {`${location['student_id']}`}
+                                            </p>
+                                        </TableCell>
                                     </TableRow>
                                 )) : null}
                             </TableBody>
