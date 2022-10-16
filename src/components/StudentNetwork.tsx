@@ -27,7 +27,9 @@ const StudentNetwork = () => {
           resp.data.forEach(person => {
             person.societies.forEach(society => {
               mappedData.links.push({"source": person.student_id, "target": society})
+              mappedData.links.push({"source": society, "target": person.student_id})
             });
+            mappedData.links.push({"source": person.subject, "target": person.student_id})
           });
           setData(mappedData);
         });
@@ -46,16 +48,15 @@ const StudentNetwork = () => {
     );
 
     let newData = data;
-    if (node.opacity === 1) {
+    if (node.opacity !== 0.99) {
         const linkedNodeIds = data?.links.filter((link: any) => {
         return link.source.id === node.id;
         }).map((link: any) => link.target.id);
         newData?.nodes.forEach(checkingNode => {
             if (!linkedNodeIds?.includes(checkingNode.id)) {
-                checkingNode.opacity = 0.0;
-            }
-            if (linkedNodeIds?.includes(checkingNode.id)) {
-                checkingNode.opacity = 0.99;
+                checkingNode.opacity = 0.2;
+            } else {
+                checkingNode.opacity = 1;
             }
         });
         node.opacity = 0.99;
