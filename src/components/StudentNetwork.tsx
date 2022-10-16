@@ -15,9 +15,9 @@ const StudentNetwork = () => {
         axios.get<string[]>("http://localho.st:5000/societies").then((societiesResp) => {
           let mappedData = {
             "nodes": [
-              ...resp.data.map(person => ({"id": person.student_id, "label": person.name, "opacity": 1, "group": 1})),
-              ...coursesResp.data.map(course => ({"id": course, "opacity": 0.5, "group": 2})),
-              ...societiesResp.data.map(society => ({"id": society, "opacity": 0.5, "group": 3})),
+              ...resp.data.map(person => ({"id": person.student_id, "label": person.name, "opacity": 1, "group": 1, "color": "#dfdfdf"})),
+              ...coursesResp.data.map(course => ({"id": course, "opacity": 1, "group": 2, "color": "#d946ef"})),
+              ...societiesResp.data.map(society => ({"id": society, "opacity": 1, "group": 3, "color": "#f43f5e"})),
             ],
             "links": [
               ...resp.data.map(person => ({"source": person.student_id, "target": person.subject}))
@@ -50,6 +50,7 @@ const StudentNetwork = () => {
     let newData = data;
     if (node.opacity !== 0.99) {
         const linkedNodeIds = data?.links.filter((link: any) => {
+        console.log(node.color);
         return link.source.id === node.id;
         }).map((link: any) => link.target.id);
         newData?.nodes.forEach(checkingNode => {
