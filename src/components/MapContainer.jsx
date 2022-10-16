@@ -6,11 +6,11 @@ import img from '../img.svg'
 
 export function MapContainer({ google }) {
 
-  const [locationData, setLocationData] = useState([]);
+  const [data, setData] = useState([]);
 
   const getData = async () => {
     await axios.get("http://127.0.0.1:5000/places").then((resp) => {
-      setLocationData(resp.data);
+      setData(resp.data);
     })
   }
 
@@ -99,7 +99,7 @@ export function MapContainer({ google }) {
       disableDefaultUI={true}
 
       >
-      {locationData.map((place, index) => (
+      {data.map((place, index) => (
         <Marker onClick={() => alert(place.name)}
           key={index}
           name={place.name}
