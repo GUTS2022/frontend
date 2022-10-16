@@ -8,6 +8,7 @@ import { Person } from '../types/peopleTypes';
 const StudentNetwork = () => {
   const [data, setData] = useState<GraphData>();
   const graphRef = useRef<ForceGraphMethods>();
+  const [search, setSearch] = useState<string>();
 
   const getData = async () => {
     await axios.get<Person[]>("http://localho.st:5000/people").then((resp) => {
@@ -35,6 +36,15 @@ const StudentNetwork = () => {
         });
       });
     });
+  }
+
+  const findNodeByName = (name: any) => {
+    data?.nodes.forEach(node => {
+        console.log("does " + node.label + " equal " + name + " node being searched is: " + node.id)
+        if (node.label?.toLowerCase() === name.toLowerCase() || node.id.toLowerCase() === name.toLowerCase()) {
+            onNodeClick(node)
+        }
+    })
   }
 
   const onNodeClick = useCallback((node: any) => {
@@ -73,8 +83,17 @@ const StudentNetwork = () => {
     getData();
   }, []);
 
+  const handleSearch = (event: any) => {
+    event.preventDefault()
+    findNodeByName(search)
+  }
+
   return (
     <div>
+        <form onSubmit={handleSearch}>
+            <input type="text" onChange={e => {setSearch(e.target.value)}} placeholder="Search..." className="fixed top-7 right-7 z-50 w-1/5 opacity-50 focus:opacity-100 text-xl rounded-xl p-2 font-poppins"></input>
+            <input type="submit" className="hidden"></input>
+        </form>
       <ForceGraph3D
         ref={graphRef}
         graphData={data}
