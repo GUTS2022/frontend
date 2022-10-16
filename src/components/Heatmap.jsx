@@ -3,8 +3,8 @@ import MapContainer from './MapContainer'
 
 const Heatmap = () => {
   return (
-    <div>
-      <MapContainer  />
+    <div className='w-full h-auto bg-black overflow-hidden'>
+        <MapContainer/>
     </div>
   )
 }
