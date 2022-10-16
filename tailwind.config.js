@@ -5,8 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      mode: 'jit',
       colors: {
         'special-red': '#2C0800',
+        'stolen': '#a6a8af'
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
