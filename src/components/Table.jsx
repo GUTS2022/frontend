@@ -152,7 +152,7 @@ const TablePage = (props) => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {peopleData.length > 0 ? locationData.map((location, index) => (
+                                {locationData.length > 0 ? locationData.map((location, index) => (
                                     <TableRow
                                         key={index}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
