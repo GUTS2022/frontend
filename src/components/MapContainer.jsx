@@ -142,8 +142,7 @@ export function MapContainer({ google }) {
 
   return (
     <div className='absolute w-full h-screen '>
-      <div className='w-1/2 p-10'>
-
+      <div className='fixed top-[95%] left-1/4 w-1/2 z-20 px-6 bg-gray-600 opacity-80 rounded-xl'>
         <Slider
           aria-label="Time"
           defaultValue={0}
@@ -154,7 +153,6 @@ export function MapContainer({ google }) {
           min={0}
           max={1500}
         />
-
       </div>
 
       <Map
