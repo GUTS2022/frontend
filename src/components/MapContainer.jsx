@@ -188,7 +188,7 @@ export function MapContainer({ google }) {
 
 
           <Marker
-            key={index}
+            key={index2}
             name={place.name}
             position={{ lat: getIndividualLat(place.location.latitude, index2), lng: getIndividualLon(place.location.longitude, index2) }}
             onClick={(props, marker) => {
