@@ -91,7 +91,7 @@ const StudentNetwork = () => {
   return (
     <div>
         <form onSubmit={handleSearch}>
-            <input type="text" onChange={e => {setSearch(e.target.value)}} className="fixed top-5 right-3 z-50"></input>
+            <input type="text" onChange={e => {setSearch(e.target.value)}} placeholder="Search..." className="fixed top-7 right-7 z-50 w-1/5 opacity-50 focus:opacity-100 text-xl rounded-xl p-2 font-poppins"></input>
             <input type="submit" className="hidden"></input>
         </form>
       <ForceGraph3D
