@@ -15,6 +15,7 @@ const TablePage = (props) => {
     const [peopleData, setPeopledata] = useState([]);
     const [locationData, setLocationData] = useState([]);
     const [logsData, setLogsData] = useState([]);
+    const [statementsData, setStatementsData] = useState([]);
     const [current, setCurrent] = useState("people");
 
     const getPeopleData = async () => {
@@ -35,10 +36,17 @@ const TablePage = (props) => {
         })
     }
 
+    const getStatementsData = async () => {
+        await axios.get("http://127.0.0.1:5000/statements").then((resp) => {
+            setStatementsData(resp.data);
+        })
+    }
+
     useEffect(() => {
         getPeopleData();
         getLocationData();
         getLogsData();
+        getStatementsData();
     }, [])
 
 
@@ -173,6 +181,46 @@ const TablePage = (props) => {
                                         <TableCell align="left">
                                             <p className="text-stolen">
                                                 {location['opening_hours']['end_time']}
+                                            </p>
+                                        </TableCell>
+                                    </TableRow>
+                                )) : null}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    : null
+                }
+
+                {current === 'statements' ?
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow className="bg-[#121212]">
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Student ID&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Name&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold text-white">Testimony&nbsp;</p></TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {statementsData.length > 0 ? statementsData.map((statements, index) => (
+                                    <TableRow
+                                        key={index}
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                        className={index % 2 === 0 ? 'bg-[#2b2c34]' : 'bg-[#33333d]'}
+                                    >
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {statements['name']}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {`${statements['student_id']}`}
+                                            </p>
+                                        </TableCell>
+                                        <TableCell align="left">
+                                            <p className="text-stolen">
+                                                {`${statements['testimony']}`}
                                             </p>
                                         </TableCell>
                                     </TableRow>
