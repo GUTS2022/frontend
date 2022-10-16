@@ -22,7 +22,7 @@ const Home = () => {
                         <div className="relative group">
                             <div className="absolute -inset-0.5  bg-red-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                             <Link to="/heatmap">
-                                <button className="relative px-7 py-4 bg-black rounded-lg flex items-center divide-x divide-gray-600 text-red-600 font-poppins font-medium text-xl leading-tight uppercase  ">Heatmap</button>
+                                <button className="relative px-7 py-4 bg-black rounded-lg flex items-center divide-x divide-gray-600 text-red-600 font-poppins font-medium text-xl leading-tight uppercase  ">Map</button>
                             </Link>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ const Home = () => {
                         <div className="relative group ">
                             <div className="absolute -inset-0.5  bg-red-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                             <Link to="/table">
-                                <button className="relative px-7 py-4 bg-black rounded-lg flex items-center divide-x divide-gray-600 text-red-600 font-poppins font-medium text-xl leading-tight uppercase  ">Tableview</button>
+                                <button className="relative px-7 py-4 bg-black rounded-lg flex items-center divide-x divide-gray-600 text-red-600 font-poppins font-medium text-xl leading-tight uppercase  ">Table View</button>
                             </Link>
                         </div>
                     </div>
