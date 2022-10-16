@@ -145,6 +145,7 @@ export function MapContainer({ google }) {
 
   return (
     <div className='absolute w-full h-screen '>
+        <a href="/" className="text-4xl text-black fixed top-7 left-7 z-50">&lt;</a>
       <div className='fixed top-[95%] left-1/4 w-1/2 z-20 px-6 bg-gray-600 opacity-80 rounded-xl'>
         <Slider
           aria-label="Time"

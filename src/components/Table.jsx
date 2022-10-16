@@ -52,6 +52,7 @@ const TablePage = (props) => {
 
     return (
         <div className='w-full h-screen bg-white'>
+            <a href="/" className="text-4xl text-white fixed top-2 left-7 z-50">&lt;</a>
             <nav className="font-poppins flex flex-col text-center py-4 px-6 bg-[#121212] shadow w-full items-center justify-center">
                 <div className="mb-2 sm:mb-0">
                     <button onClick={() => setCurrent('people')} className="text-lg no-underline text-white hover:text-red-300 mr-6 font-poppins font-semibold">Students</button>

@@ -90,6 +90,7 @@ const StudentNetwork = () => {
 
   return (
     <div>
+        <a href="/" className="text-4xl text-white fixed top-7 left-7 z-50">&lt;</a>
         <form onSubmit={handleSearch}>
             <input type="text" onChange={e => {setSearch(e.target.value)}} placeholder="Search..." className="fixed top-7 right-7 z-50 w-1/5 opacity-50 focus:opacity-100 text-xl rounded-xl p-2 font-poppins"></input>
             <input type="submit" className="hidden"></input>
