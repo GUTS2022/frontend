@@ -48,31 +48,30 @@ const TablePage = () => {
 
     return (
 
-        <div className='w-full h-screen bg-special-red'>
-            <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-black shadow sm:items-baseline w-full">
-                <div class="mb-2 sm:mb-0">
+        <div className='w-full h-screen bg-white'>
+            <nav className="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
+                <div className="mb-2 sm:mb-0">
                     <button onClick={() => setCurrent('people')} className="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Students</button>
                     <button onClick={() => setCurrent('locations')} className="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Locations</button>
                     <button onClick={() => setCurrent('statements')} className="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Statements</button>
                     <button onClick={() => setCurrent('logs')} className="text-2xl no-underline text-red-600 hover:text-red-300 mr-6 font-poppins font-semibold">Student Logs</button>
                 </div>
             </nav>
-            <div className=''>
+            <div className='bg-gray-600'>
                 {current === 'people' ?
-                    <TableContainer component={Paper}>
+                    <TableContainer component={Paper} className="bg-gray-600">
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
                             <TableHead>
-                                <TableRow>
-
-                                    <TableCell>Student ID</TableCell>
-                                    <TableCell align="right">Age&nbsp;</TableCell>
-                                    <TableCell align="right">Hair Colour</TableCell>
-                                    <TableCell align="right">Height&nbsp;</TableCell>
-                                    <TableCell align="right">Name&nbsp;</TableCell>
-                                    <TableCell align="right">Sex&nbsp;</TableCell>
-                                    <TableCell align="right">Societies</TableCell>
-                                    <TableCell align="right">Subject&nbsp;</TableCell>
-                                    <TableCell align="right">Year&nbsp;</TableCell>
+                                <TableRow className="bg-gray-300">
+                                <TableCell align="left"><p className="font-poppins font-semibold">Student ID&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Age&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Hair Colour&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Height&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Name&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Sex&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Societies&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Subject&nbsp;</p></TableCell>
+                                    <TableCell align="left"><p className="font-poppins font-semibold">Year&nbsp;</p></TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -81,15 +80,15 @@ const TablePage = () => {
                                         key={index}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell align="right">{person['student_id']}</TableCell>
-                                        <TableCell align="right">{person['age']}</TableCell>
-                                        <TableCell align="right">{person['hair_colour']}</TableCell>
-                                        <TableCell align="right">{person['height']}</TableCell>
-                                        <TableCell align="right">{person['name']}</TableCell>
-                                        <TableCell align="right">{person['sex']}</TableCell>
-                                        <TableCell align="right">{person['societies']}</TableCell>
-                                        <TableCell align="right">{person['subject']}</TableCell>
-                                        <TableCell align="right">{person['year']}</TableCell>
+                                        <TableCell align="left">{person['student_id']}</TableCell>
+                                        <TableCell align="left">{person['age']}</TableCell>
+                                        <TableCell align="left">{person['hair_colour']}</TableCell>
+                                        <TableCell align="left">{person['height']}</TableCell>
+                                        <TableCell align="left">{person['name']}</TableCell>
+                                        <TableCell align="left">{person['sex']}</TableCell>
+                                        <TableCell align="left">{person['societies']}</TableCell>
+                                        <TableCell align="left">{person['subject']}</TableCell>
+                                        <TableCell align="left">{person['year']}</TableCell>
 
                                     </TableRow>
                                 )) : null}
