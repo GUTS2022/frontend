@@ -136,8 +136,11 @@ export function MapContainer({ google }) {
     setValue(value);
 
     let x = (Math.floor(value / 60) * 100) + (value % 60) + 300
-    console.log(x.toString());
-    setTime(x.toString());
+    let timeStr = x.toString();
+    if (timeStr.length < 4) {
+        timeStr = "0" + timeStr;
+    }
+    setTime(timeStr);
   };
 
   return (
